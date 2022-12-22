@@ -1,39 +1,197 @@
-.App {
+.App-outer {
   text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-float infinite 3s ease-in-out;
-  }
-}
-
-.App-header {
   min-height: 100vh;
+  /* background-image: url(../src/images/lovebg.gif); */
+  overflow: hidden;
+  position: relative;
+  background-color: rgba(249, 230, 255);
+  
+}
+.App{
+  position: relative;
+}
+
+.demo-bg {
+  opacity: 0.1;
+  position: absolute;
+  left: 0;
+  top: 0;
+  /* width: 100%; */
+  height: auto;
+}
+
+.message-outer {
+  text-align: center;
+  min-height: 100vh;
+  /* background-image: url(../src/images/lovebg.gif); */
+  overflow: hidden;
+  position: relative;
+  background-color: rgba(249, 230, 255);
+  
+}
+.App-2{
+  position: relative;
+}
+
+.demo-bg2 {
+  opacity: 1;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: auto;
+}
+.main-body{
+  padding-top: 20px;
+}
+
+.minions{
+  max-width: 300px;
+}
+
+.headText{
+  font-family: 'Unbounded', cursive;
+  font-size: 25px;
+  line-height: 1.5;
+  /* letter-spacing: 1.2px; */
+}
+.form-div{
+  margin-top: 40px;
+}
+.msg-box{
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  
+}
+.msg-inner-box{
+  max-width: 300px;
+  margin: 30px;
+  border: 1px solid rgb(255, 190, 190);
+  padding: 20px;
+  border-radius: 10px;
 }
 
-.App-link {
-  color: rgb(112, 76, 182);
+
+
+@keyframes rotate {
+	100% {
+		transform: rotate(1turn);
+	}
 }
 
-@keyframes App-logo-float {
-  0% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(10px);
-  }
-  100% {
-    transform: translateY(0px);
-  }
+.rainbow {
+	position: relative;
+	z-index: 0;
+	max-width: 300px;
+  margin: 10px 30px 30px 30px;
+	border-radius: 10px;
+	overflow: hidden;
+	padding: 2rem;
+}	
+	.rainbow::before {
+		content: '';
+		position: absolute;
+		z-index: -2;
+		left: -50%;
+		top: -50%;
+		width: 200%;
+		height: 200%;
+		background-color: #f8def4;
+		background-repeat: no-repeat;
+		background-size: 50% 50%, 50% 50%;
+		background-position: 0 0, 100% 0, 100% 100%, 0 100%;
+		background-image: linear-gradient(#f8def4, #f8def4), linear-gradient(#ffc8d4, #ffe1e7), linear-gradient(rgba(249, 230, 255), rgba(249, 230, 255)), linear-gradient(#fe9f9f, rgba(249, 230, 255));
+		animation: rotate 4s linear infinite;
+	}
+	
+	.rainbow::after {
+		content: '';
+		position: absolute;
+		z-index: -1;
+		left: 6px;
+		top: 6px;
+		width: calc(100% - 12px);
+		height: calc(100% - 12px);
+		background: rgba(249, 230, 255);;
+		border-radius: 5px;
+		animation: opacityChange 3s infinite alternate;
+	}
+
+
+@keyframes opacityChange {
+	50% {
+		opacity:1;
+	}
+	100% {
+		opacity: .5;
+	}
 }
+
+.msg{
+  margin-top: 30px;
+  font-weight: bold;
+}
+
+
+.rainbow2 {
+	position: relative;
+  
+	z-index: 0;
+	max-width: 300px;
+  margin: 10px 30px 30px 30px;
+	border-radius: 10px;
+	overflow: hidden;
+	padding: 2rem;
+}	
+	.rainbow2::before {
+		content: '';
+		position: absolute;
+		z-index: -2;
+		left: -50%;
+		top: -50%;
+		width: 200%;
+		height: 200%;
+		background-color: #a91111;
+		background-repeat: no-repeat;
+		background-size: 50% 50%, 50% 50%;
+		background-position: 0 0, 100% 0, 100% 100%, 0 100%;
+		background-image: linear-gradient(#ef0808, #ef0808), linear-gradient(#a7072a, #a7072a), linear-gradient(rgb(175, 7, 7), rgba(175, 7, 7)), linear-gradient(#760202, #760202);
+		animation: rotate 4s linear infinite;
+	}
+	
+	.rainbow2::after {
+		content: '';
+		position: absolute;
+		z-index: -1;
+		left: 6px;
+		top: 6px;
+		width: calc(100% - 12px);
+		height: calc(100% - 12px);
+		background: rgb(156, 5, 5);;
+		border-radius: 5px;
+		animation: opacityChange 3s infinite alternate;
+	}
+
+  .message{
+    color: rgb(255, 255, 255);
+    font-family: 'Courgette', cursive;
+    font-weight: lighter;
+    font-size: 25px;
+  }
+  .sender{
+    color: rgb(229, 223, 230);
+    font-size: 18px;
+    /* font-weight: bold; */
+  }
+
+  .footer{
+    color: grey;
+    margin-top: 30px;
+    text-align: center;
+
+    border-top: 1px solid pink;
+    padding: 10px 0px;
+  }
+  .footer a{
+    color: grey;
+  }
