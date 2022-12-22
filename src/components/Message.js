@@ -7,7 +7,10 @@ import { faPencil } from '@fortawesome/free-solid-svg-icons/faPencil';
 import { Link } from "react-router-dom";
 
 function Message() {
-  const [message, setmessage] = useState('')
+  const [message, setmessage] = useState('Best wishes for a joyous Christmas filled with love, happiness and prosperity! ');
+  const [first, setfirst] = useState('Friend');
+  const [second, setsecond] = useState('Your Friend');
+
   const url = window.location.href;
   let yourName = url.indexOf("name=") + "name=".length;
   let endIndex = url.indexOf("&", yourName);
@@ -20,12 +23,16 @@ function Message() {
   let id = url.indexOf("id=") + "id=".length;
   let result3 = url.substring(id);
 
-  if(result, result2, result3){
+  if(result && result2 && result3){
     (async function getMessages() {
       let response = await fetch("https://raw.githubusercontent.com/aeskay/aeskay/main/messages.json");
       let results = await response.json();
+      setfirst(result2)
+      setsecond(result)
       setmessage(results.messages[result3-1].message);
   })();
+  } else {
+
   }
 
 return (
@@ -37,9 +44,9 @@ return (
         </div>
         <div style={{justifyContent: "center", display: "flex"}}>
           <div className='rainbow2'>
-            <span className='sender'>Dear {result2},</span>
+            <span className='sender'>Dear {first},</span>
             <p className='message'>{message}</p>
-            <span className='sender'>- {result}</span>
+            <span className='sender'>- {second}</span>
           </div>
         </div>
         <p>Send a message to your loved ones too!</p>
