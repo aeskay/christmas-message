@@ -15,10 +15,12 @@ function Message() {
   let yourName = url.indexOf("name=") + "name=".length;
   let endIndex = url.indexOf("&", yourName);
   let result = url.substring(yourName, endIndex);
+  result = result.replace(/%20/g, ' ');
 
   let theirName = url.indexOf("rname=") + "rname=".length;
   let endIndex2 = url.indexOf("&", theirName);
   let result2 = url.substring(theirName, endIndex2);
+  result2 = result2.replace(/%20/g, ' ');
 
   let id = url.indexOf("id=") + "id=".length;
   let result3 = url.substring(id);
@@ -31,9 +33,7 @@ function Message() {
       setsecond(result)
       setmessage(results.messages[result3-1].message);
   })();
-  } else {
-
-  }
+  } 
 
 return (
     <div className="message-outer" >
